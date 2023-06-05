@@ -1,4 +1,4 @@
-package com.koreaIT.faba.am;
+package com.koreaIT.java.am;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
