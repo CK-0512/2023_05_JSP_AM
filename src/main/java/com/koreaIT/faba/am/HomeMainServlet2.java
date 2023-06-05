@@ -7,8 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-//-> 요청 주소의 경로를 매핑 -> url 매핑
-@WebServlet("/home/printDan")
+@WebServlet("/home/printDan2")
 public class HomeMainServlet2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
