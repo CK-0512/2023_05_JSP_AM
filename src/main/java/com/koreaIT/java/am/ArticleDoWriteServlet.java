@@ -59,5 +59,10 @@ public class ArticleDoWriteServlet extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		
+	}
+
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doGet(req, resp);
 	}
 }

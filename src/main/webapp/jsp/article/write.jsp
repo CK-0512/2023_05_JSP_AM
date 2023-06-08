@@ -13,5 +13,17 @@
 <body>
 	<h1>글쓰기</h1>
 	
+	<form action="../article/doWrite" method="POST">
+		<div>
+			제목 : <input name="title" type="text" placeholder="제목을 입력해주세요"/>
+		</div>
+		<div>
+			내용 : <textarea name="body" placeholder="내용을 입력해주세요"></textarea>
+		</div>
+		<button>작성</button>
+	</form>
+	<div>
+		<a href="../article/list">목록</a>
+	</div>
 </body>
 </html>
