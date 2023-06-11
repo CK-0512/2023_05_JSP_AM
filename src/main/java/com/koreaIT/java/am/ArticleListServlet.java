@@ -45,7 +45,15 @@ public class ArticleListServlet extends HttpServlet {
 			int totalCount = DBUtil.selectRowIntValue(conn, sql);
 			int totalPage = (int)Math.ceil((double)totalCount / itemsInAPage);
 			
-			request.setAttribute("totalPage", totalPage);
+			int pageSize = 5;
+			
+			int from = page - pageSize;
+			if (from < 1)
+				from = 1;
+			
+			int end = page + pageSize;
+			if (end > totalPage)
+				end = totalPage;
 			
 			sql = new SecSql();
 			sql.append("SELECT *");
@@ -57,6 +65,8 @@ public class ArticleListServlet extends HttpServlet {
 
 			request.setAttribute("page", page);
 			request.setAttribute("totalPage", totalPage);
+			request.setAttribute("from", from);
+			request.setAttribute("end", end);
 			request.setAttribute("articleListMap", articleListMap);
 			
 			request.getRequestDispatcher("/jsp/article/list.jsp").forward(request, response);
