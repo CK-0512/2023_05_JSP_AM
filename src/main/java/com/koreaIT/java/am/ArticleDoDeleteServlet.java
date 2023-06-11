@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Map;
 
+import com.koreaIT.java.am.config.Config;
 import com.koreaIT.java.am.util.DBUtil;
 import com.koreaIT.java.am.util.SecSql;
 
@@ -25,10 +26,10 @@ public class ArticleDoDeleteServlet extends HttpServlet {
 		
 		Connection conn = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://127.0.0.1:3306/jsp_article_manager?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true&zeroDateTimeNehavior=convertToNull";
+			Class.forName(Config.getDBDriverName());
+			String url = Config.getDBUrl();
 			
-			conn = DriverManager.getConnection(url, "root", "");
+			conn = DriverManager.getConnection(url, Config.getDBUser(), Config.getDBPw());
 			
 			String inputId = request.getParameter("id");
 			int id = Integer.parseInt(inputId);
