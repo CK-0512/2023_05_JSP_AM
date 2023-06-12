@@ -20,10 +20,11 @@
 		<div>
 			내용 : <textarea name="body" placeholder="내용을 입력해주세요"></textarea>
 		</div>
-		<button>작성</button>
+		<div>
+			<button>작성</button>
+			<a href="../article/list">목록</a>
+		</div>
 	</form>
-	<div>
-		<a href="../article/list">목록</a>
-	</div>
+	
 </body>
 </html>
