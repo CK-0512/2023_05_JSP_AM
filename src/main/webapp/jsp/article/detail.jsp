@@ -17,6 +17,7 @@
 	<h1><%= (int) articleMap.get("id") %>번 게시물</h1>
 	<div>글번호 : <%= (int) articleMap.get("id") %></div>
 	<div>작성일 : <%= (LocalDateTime) articleMap.get("regDate") %></div>
+	<div>작성자 : <%= (int) articleMap.get("writerName") %></div>
 	<div>제목 : <%= (String) articleMap.get("title") %></div>
 	<div>내용 : <%= (String) articleMap.get("body") %></div>
 	<div>
