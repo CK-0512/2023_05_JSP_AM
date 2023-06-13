@@ -5,6 +5,7 @@
     
 <% 
 	Map<String, Object> articleMap = (Map<String, Object>)request.getAttribute("articleMap"); 
+	int loginedMemberId = (int) request.getAttribute("loginedMemberId");
 %>
  
 <!DOCTYPE html>
@@ -17,13 +18,19 @@
 	<h1><%= (int) articleMap.get("id") %>번 게시물</h1>
 	<div>글번호 : <%= (int) articleMap.get("id") %></div>
 	<div>작성일 : <%= (LocalDateTime) articleMap.get("regDate") %></div>
-	<div>작성자 : <%= (int) articleMap.get("writerName") %></div>
+	<div>작성자 : <%= (String) articleMap.get("writerName") %></div>
 	<div>제목 : <%= (String) articleMap.get("title") %></div>
 	<div>내용 : <%= (String) articleMap.get("body") %></div>
 	<div>
 		<a href="../article/list">목록</a>
-		<a href="../article/modify?id=<%= (int)articleMap.get("id") %>">수정</a>
-		<a href="../article/doDelete?id=<%= (int)articleMap.get("id") %>" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;">삭제</a>
+		<% 
+			if (loginedMemberId == (int)articleMap.get("memberId")) {
+		%>
+			<a href="../article/modify?id=<%= (int)articleMap.get("id") %>">수정</a>
+			<a href="../article/doDelete?id=<%= (int)articleMap.get("id") %>" onclick="if(confirm('정말 삭제하시겠습니까?') == false) return false;">삭제</a>
+		<%
+			} 
+		%>
 	</div>
 </body>
 </html>

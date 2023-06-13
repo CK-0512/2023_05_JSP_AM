@@ -1,14 +1,6 @@
 package com.koreaIT.java.am;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.util.Map;
-
-import com.koreaIT.java.am.config.Config;
-import com.koreaIT.java.am.util.DBUtil;
-import com.koreaIT.java.am.util.SecSql;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
